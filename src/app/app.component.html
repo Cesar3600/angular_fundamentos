@@ -1,3 +1,23 @@
+<h1>Eventos</h1>
+<button [disabled]="btnDisabled">Enviar</button>
+<button (click)="toggleButton()">Activar-desactivar</button>
+
+<p>Edad: {{ person.age }}</p>
+<button (click)="decreaseAge()">-- Age</button>
+<button (click)="increaseAge()">Age ++</button>
+
+<div class="box" (scroll)="onScroll($event)">
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum esse quidem
+    iure quo dicta tempora consectetur quasi. Nulla reiciendis sit, temporibus,
+    alias modi provident dicta ipsum, consectetur dolor eveniet delectus.
+  </p>
+</div>
+<br />
+<input type="text" [value]="person.name" (keyup)="captureString($event)" />
+<h3 for="">{{ person.name }}</h3>
+<hr />
+
 <h1>Propiedades</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <input type="text" [value]="person.name" />
@@ -5,6 +25,7 @@
 <img [src]="person.avatar" alt="" width="100" />
 
 <hr />
+
 <h1>Hola mundo</h1>
 <h2>{{ "Hola mundo ".repeat(5) }}</h2>
 <p>3+3 = {{ 3 + 3 }}</p>

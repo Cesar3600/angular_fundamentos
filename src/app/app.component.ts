@@ -19,4 +19,23 @@ export class AppComponent {
     avatar:
       'https://i.pinimg.com/564x/4e/83/f5/4e83f57dff749d624e1093b3a6a65669.jpg',
   };
+  toggleButton() {
+    this.btnDisabled = !this.btnDisabled;
+  }
+  increaseAge() {
+    this.person.age += 1;
+  }
+
+  decreaseAge() {
+    this.person.age -= 1;
+  }
+
+  onScroll(event: Event) {
+    const element = event.target as HTMLElement;
+    console.log(element.scrollTop);
+  }
+  captureString(event: Event) {
+    const element = event.target as HTMLInputElement;
+    this.person.name = element.value;
+  }
 }
