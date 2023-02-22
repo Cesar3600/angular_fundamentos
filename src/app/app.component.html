@@ -1,3 +1,29 @@
+<h1>*NGIF</h1>
+<input type="text" required [(ngModel)]="person.name" />
+<p *ngIf="person.name === 'nahomi'">{{ person.name }}</p>
+<p *ngIf="person.name === 'nahomi' || person.age === 18; else myBlock">
+  Soy julian
+</p>
+<ng-template #myBlock>
+  <p>blocke de ELSE!</p>
+</ng-template>
+<hr />
+
+<h1>Eventos</h1>
+<p>Nombre: {{ person.name }}</p>
+<input type="text" [(ngModel)]="person.name" />
+
+<input
+  type="number"
+  max="18"
+  min="10"
+  #age="ngModel"
+  [(ngModel)]="person.age"
+/>
+
+<h2>{{ person.age }}</h2>
+<p>{{ age.valid }}</p>
+
 <h1>Eventos</h1>
 <button [disabled]="btnDisabled">Enviar</button>
 <button (click)="toggleButton()">Activar-desactivar</button>
@@ -14,7 +40,7 @@
   </p>
 </div>
 <br />
-<input type="text" [value]="person.name" (keyup)="captureString($event)" />
+<!-- <input type="text" [value]="person.name" (keyup)="captureString($event)" /> -->
 <h3 for="">{{ person.name }}</h3>
 <hr />
 
