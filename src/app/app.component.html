@@ -1,3 +1,48 @@
+<h1>*ngSwitch</h1>
+<input type="text" [(ngModel)]="person.name" />
+<div [ngSwitch]="person.name">
+  <p *ngSwitchCase="'nicolas'">La persona es Nicolas</p>
+  <p *ngSwitchCase="'camilo'">La persona es Camilo</p>
+  <p *ngSwitchCase="'franceska'">La persona es Franceska</p>
+  <p *ngSwitchDefault>No hace match con ninguno</p>
+</div>
+
+<!-- <p *ngIf="person.name === 'nicolas'">La persona es Nicolas</p>
+<p *ngIf="person.name === 'camilo'">La persona es Camilo</p>
+<p *ngIf="person.name === 'franceska'">La persona es Franceska</p> -->
+
+<h1>*NGFOR OBJs</h1>
+
+<div>
+  <div *ngFor="let product of products">
+    <img width="300" [src]="product.image" [alt]="product.name" />
+    <h2>{{ product.name }}</h2>
+    <h3>Price S/.{{ product.price }}</h3>
+  </div>
+</div>
+
+<h1>*NGFOR my ejemplo</h1>
+<input type="text" [(ngModel)]="producto" />
+<button (click)="addprod()">Agregar producto</button>
+
+<ul>
+  <li *ngIf="productos.length === 0">no hay mas productos</li>
+  <li *ngFor="let producto of productos; index as i">
+    {{ i + 1 }} - {{ producto }} <button (click)="delprod(i)">DEL</button>
+  </li>
+</ul>
+
+<h1>*NGFOR</h1>
+<input type="text" [(ngModel)]="newname" />
+<button (click)="addname()">Add Name</button>
+
+<ul>
+  <li *ngIf="names.length === 0">La lista esta vacia</li>
+  <li *ngFor="let name of names; index as i">
+    {{ i }} {{ name }} <button (click)="removename(i)">Delete</button>
+  </li>
+</ul>
+
 <h1>*NGIF</h1>
 <input type="text" required [(ngModel)]="person.name" />
 <p *ngIf="person.name === 'nahomi'">{{ person.name }}</p>
